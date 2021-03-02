@@ -1,1 +1,84 @@
 /* Denna fil skall innehålla din CSS kod */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 750px) {
+
+    #container {
+        display: grid;
+        width: 100vw;
+        min-height: 100vh;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 3fr 10fr 2fr;
+        grid-template-areas: 
+        'hd'
+        '.'
+        'ma'
+        'fo';
+    }
+
+    #header {
+        display: grid;
+        grid-area: hd;
+        grid-template-columns: 5fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+        'lo me';
+    }
+
+    #menu {
+        grid-area: me;
+        background-color: darksalmon;
+    }
+
+    #logo {
+        grid-area: lo;
+        background-color: blue;
+    }
+
+    main {
+        display: grid;
+        grid-area: ma;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+        '.'
+        'ab'
+        'in'
+        'boo'
+        'bo';
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-bottom: 2.5%
+    }
+
+    #about {
+        grid-area: ab;
+        background-color: brown;
+    }
+
+    #instructors {
+        grid-area: in;
+        background-color: coral;
+    }
+
+    #booking {
+        grid-area: boo;
+        background-color: darkgreen;
+    }
+
+    #boats {
+        grid-area: bo;
+        background-color: darkkhaki;
+    }
+
+    footer {
+        grid-area: fo;
+        background-color: darkorchid;
+    }
+}
+
