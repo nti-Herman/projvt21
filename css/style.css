@@ -4,6 +4,12 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    font-family: rubrikMonoOne;
+}
+
+@font-face {
+    font-family: rubrikMonoOne;
+    src: url(../misc/RubikMonoOne-Regular.ttf);
 }
 
 @media screen and (max-width: 750px) {
@@ -11,7 +17,7 @@
     #container {
         display: grid;
         width: 100vw;
-        min-height: 100vh;
+        height: 100vh;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 3fr 10fr 2fr;
         grid-template-areas: 
@@ -19,6 +25,10 @@
         '.'
         'ma'
         'fo';
+        background-image: url("../img/boatBackground.JPG");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
     }
 
     #header {
@@ -32,12 +42,12 @@
 
     #menu {
         grid-area: me;
-        background-color: darksalmon;
+        background-color: rgb(255,255,255);
     }
 
     #logo {
         grid-area: lo;
-        background-color: blue;
+        background-color: rgb(255,255,255);
     }
 
     main {
@@ -80,5 +90,57 @@
         grid-area: fo;
         background-color: darkorchid;
     }
+
+    .navLinks a {
+        color: rgb(0,0,0);
+        text-decoration: none;
+        font-size: 10px;
+        list-style: none;
+    }
+
+    .burger div {
+        width: 25px;
+        height: 3px;
+        background-color: rgb(223, 144, 70);
+        margin: 5px;
+        border-radius: 10%;
+        transition: all 0.3s;
+    }
+
+    .navLinks {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        position: absolute;
+        right: 0px;
+        height: 25vh;
+        top: -25vh;
+        background-color: rgb(255,255,255);
+        align-items: center;
+        width: 30%;
+        transition: all 1s;
+    }
+}
+
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.navActive {
+    transform: translateY(30vh);
+}
+
+.burger {
+    margin-top: 15%;
+    margin-left: 20%;
+    cursor: pointer;
 }
 
