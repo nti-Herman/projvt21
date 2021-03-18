@@ -10,31 +10,54 @@
 @font-face {
     font-family: rubrikMonoOne;
     src: url(../misc/RubikMonoOne-Regular.ttf);
-}
+}   
 
 @media screen and (max-width: 750px) {
 
+/* HOME PAGE */
+
+    p {
+        font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: medium;
+        margin: 2%;
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
     html, body { 
-        max-width:100vw; overflow-x: hidden;
+        max-width:100vw; 
+        overflow-x: hidden;
     }
 
     #container {
         display: grid;
         max-width: 100vw;
-        height: 150vh;
+        min-height: 150vh;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 5fr 20fr 4fr 4fr;
+        grid-template-rows: 1fr 4fr 1fr;
         grid-template-areas: 
         'hd'
-        '.'
         'ma'
-        '.'
         'fo';
-        background-image: url("../img/boatBackground.JPG");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-attachment: fixed;
     }
+
+    body:before {
+        content: "";
+        display: block;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -10;
+        background: url("../img/boatBackground.JPG") no-repeat center center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
 
     #header {
         display: grid;
@@ -45,11 +68,11 @@
         'lo me';
         position: fixed;
         background-color: rgba(255,255,255, 0.9);
-    
     }
 
     #menu {
         grid-area: me;
+        margin-top: 40%;
     }
 
     #logo {
@@ -59,9 +82,10 @@
     #logo img {
         width: 40%;
         margin-left: 40%;
+        margin-top: 2%;
     }
 
-    main {
+    #start {
         display: grid;
         grid-area: ma;
         grid-template-columns: 1fr;
@@ -81,31 +105,169 @@
     #headline {
         font-size: 100%;
         color: rgb(255,255,255);
+        margin-top: 3%;
+    }
+
+    #headline2 {
+        grid-area: hl2;
+        font-size: 100%;
+        color: rgb(255,255,255);
+    }
+
+    #headline3 {
+        font-size: 100%;
+        color: rgb(255,255,255);
+        margin-top: 5%;
+    }
+
+    #headline5 {
+        font-size: 100%;
+        color: rgb(255,255,255);
+        margin-top: -5%;
     }
 
     #about {
         grid-area: ab;
-        background-color: brown;
+        background-image: url("../img/about.JPG");
+        background-size: cover;
+        color: rgb(255,255,255);
+        border: rgba(255,255,255,0.7) solid;
     }
 
     #instructors {
         grid-area: in;
-        background-color: coral;
+        background-image: url("../img/instructors.JPG");
+        background-size: cover;
+        color: rgb(255,255,255);
+        border: rgba(255,255,255,0.7) solid;
+        background-position: center;
     }
 
     #booking {
         grid-area: boo;
-        background-color: darkgreen;
+        background-image: url("../img/courses.JPG");
+        background-size: cover;
+        color: rgb(255,255,255);
+        border: rgba(255,255,255,0.7) solid;
     }
 
     #boats {
         grid-area: bo;
-        background-color: darkkhaki;
+        background-image: url("../img/boats.JPG");
+        background-size: cover;
+        color: rgb(255,255,255);
+        border: rgba(255,255,255,0.7) solid;
+        background-position: center;
     }
 
     footer {
         grid-area: fo;
-        background-color:#192d46;
+        background-color: rgba(25,45,70, 0.9);
+        color: rgb(255,255,255);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    #startAbout {
+        display: grid;
+        grid-area: ma;
+        grid-template-columns: 1fr;
+        grid-template-rows: 2fr 4fr 4fr 1fr;
+        grid-template-areas:
+        'hl2'
+        'oV'
+        'tN';
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-bottom: 2.5%;
+        text-align: center;
+    }
+
+    #ourVision {
+        grid-area: oV;
+        background-color: rgb(255,255,255);
+        color: rgb(0,0,0);
+    }
+
+    #theNeed {
+        grid-area: tN;
+        background-color: rgb(255,255,255);
+        color: rgb(0,0,0);
+        overflow-y: hidden;
+    }
+
+    #startInst {
+        display: grid;
+        grid-area: ma;
+        grid-template-columns: 1fr;
+        grid-template-rows: 2fr 2fr 2fr 2fr 1fr;
+        grid-template-areas: 
+        '.'
+        'in1'
+        'in2'
+        'in3'
+        '.';
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-bottom: 2.5%;
+        text-align: center;
+    }
+
+    #inst1 {
+        grid-area: in1;
+        background-color: rgb(255,255,255);
+        color: rgb(0,0,0);
+    }
+    #inst2 {
+        grid-area: in2;
+        background-color: rgb(255,255,255);
+        color: rgb(0,0,0);
+    }
+    #inst3 {
+        grid-area: in3;
+        background-color: rgb(255,255,255);
+        color: rgb(0,0,0);
+    }
+
+    #startBoat {
+        display: grid;
+        grid-area: ma;
+        grid-template-columns: 1fr;
+        grid-template-rows: 2fr 6fr 6fr 0.0fr;
+        grid-template-areas: 
+        '.'
+        'sc'
+        'fi'
+        '.';
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-bottom: 2.5%;
+        /* margin-top: 30%; */
+        text-align: center;
+    }
+
+    #scanmar {
+        grid-area: sc;
+        background-color: rgb(255,255,255);
+        color: rgb(255,255,255);
+        background-image: url("../img/scanmar.jpg");
+        background-size: cover;
+        background-position-y: bottom;
+        border: rgba(255,255,255,0.7) solid;
+        background-position: center;
+    }
+
+    #finngulf {
+        grid-area: fi;
+        background-color: rgb(255,255,255);
+        color: rgb(255, 255, 255);
+        background-image: url("../img/finngulf.jpg");
+        background-size: cover;
+        background-position-y: bottom;
+        border: rgba(255,255,255,0.7) solid;
+        background-position: center;
     }
 
     .navLinks a {
@@ -130,14 +292,14 @@
         justify-content: space-around;
         position: absolute;
         right: -30%;
-        height: 30vh;
-        top: 13vh;
-        background-color: rgb(255,255,255);
+        height: 25vh;
+        top: 100%;
+        background-color: rgba(255,255,255,0.9);
         align-items: center;
         width: 30%;
         transition: all 1s;
+        color: rgb(0,0,0);
     }
-}
 
 .toggle .line1 {
     transform: rotate(-45deg) translate(-5px, 6px);
@@ -161,3 +323,353 @@
     cursor: pointer;
 }
 
+a:link {
+    color: rgb(255,255,255);
+    text-decoration: none;
+  }
+  
+  a:visited {
+    color: rgb(255,255,255);
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: rgb(255,255,255);
+    text-decoration: none;
+  }
+ 
+  a:active {
+    color: rgb(0,0,0);
+    text-decoration: none;
+  }
+
+  ul a:link {
+    color: rgb(0,0,0);
+    text-decoration: none;
+  }
+  
+  ul a:visited {
+    color: rgb(0,0,0);
+    text-decoration: none;
+  }
+  
+  ul a:hover {
+    color: rgb(172, 172, 172);
+    text-decoration: none;
+  }
+ 
+  ul a:active {
+    color: rgb(0,0,0);
+    text-decoration: none;
+  }
+
+  h3 {
+    font-size:small;
+}
+
+}
+
+  @media screen and (min-width: 750px) {
+
+    p {
+        font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: x-large;
+        margin: 2%;
+    }
+
+    h3 {
+        font-size:x-large;
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
+    html, body { 
+        max-width:100vw; 
+        overflow-x: hidden;
+    }
+
+    #container {
+        display: grid;
+        max-width: 100vw;
+        min-height: 150vh;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 10fr 1fr;
+        grid-template-areas: 
+        'hd'
+        'ma'
+        'fo';
+        background-image: url("../img/boatBackground.JPG");
+        background-size: cover;
+        background-position: bottom;
+        background-attachment: fixed;
+    }
+
+    #header {
+        display: grid;
+        grid-area: hd;
+        grid-template-columns:1fr;
+        grid-template-rows: 3fr 1fr;
+        grid-template-areas: 
+        'lo'
+        'me';
+        background-color: rgba(255,255,255, 0.9);
+    }
+
+    #menu {
+        grid-area: me;
+        display: flex;
+        justify-content: center;
+    }
+
+    #logo {
+        grid-area: lo;
+        margin-left: 40%;
+        margin-top: 1%;
+    }
+
+    #logo img {
+        width: 30%;
+    }
+
+    ul.navLinks ul {
+        float:left;
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+
+    .navLinks a {
+        color: rgb(0,0,0);
+        text-decoration: none;
+        font-size: 15px;
+        list-style: none;
+    }
+
+    #start {
+        display: grid;
+        grid-area: ma;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 3fr 3fr;
+        grid-template-areas: 
+        'h1 h1'
+        'ab in'
+        'boo bo';
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-bottom: 2.5%;
+        text-align: center;
+    }
+
+    #headline {
+        grid-area: h1;
+        font-size: 150%;
+        color: rgb(255,255,255);
+        margin: 10%;
+    }
+
+    #headline2 {
+        font-size: 150%;
+        color: rgb(255,255,255);
+        margin: 15%;
+        grid-area: h2;
+    }
+
+    #headline3 {
+        font-size: 150%;
+        color: rgb(255,255,255);
+        margin-top: 5%;
+    }
+
+    #headline5 {
+        font-size: 150%;
+        color: rgb(255,255,255);
+        margin-top: 5%;
+    }
+
+    #about {
+        grid-area: ab;
+        background-image: url("../img/about.JPG");
+        background-size: cover;
+        color: rgb(255,255,255);
+        border: rgba(255,255,255,0.7) solid;
+        padding-top: 30%;
+    }
+
+    #instructors {
+        grid-area: in;
+        background-image: url("../img/instructors.JPG");
+        background-size: cover;
+        color: rgb(255,255,255);
+        border: rgba(255,255,255,0.7) solid;
+        background-position: center;
+        padding-top: 30%;
+    }
+
+    #booking {
+        grid-area: boo;
+        background-image: url("../img/courses.JPG");
+        background-size: cover;
+        color: rgb(255,255,255);
+        border: rgba(255,255,255,0.7) solid;
+        padding-top: 30%;
+    }
+
+    #boats {
+        grid-area: bo;
+        background-image: url("../img/boats.JPG");
+        background-size: cover;
+        color: rgb(255,255,255);
+        border: rgba(255,255,255,0.7) solid;
+        background-position: center;
+        padding-top: 30%;
+    }
+
+    footer {
+        grid-area: fo;
+        background-color: rgba(25,45,70, 0.9);
+        color: rgb(255,255,255);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    #startAbout {
+        display: grid;
+        grid-area: ma;
+        height: 70vh;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 2fr 6fr;
+        grid-template-areas: 
+        'h2 h2'
+        'tN oV';
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-bottom: 2.5%;
+        text-align: center;
+    }
+
+    #ourVision {
+        grid-area: oV;
+        background-color: rgb(255,255,255);
+        color: rgb(0,0,0);
+    }
+
+    #theNeed {
+        grid-area: tN;
+        background-color: rgb(255,255,255);
+        color: rgb(0,0,0);
+    }
+
+    #startInst {
+        display: grid;
+        grid-area: ma;
+        grid-template-columns: 1fr;
+        grid-template-rows: 2fr 2fr 2fr 2fr 1fr;
+        grid-template-areas: 
+        '.'
+        'in1'
+        'in2'
+        'in3'
+        '.';
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-bottom: 2.5%;
+        text-align: center;
+    }
+
+    #inst1 {
+        grid-area: in1;
+        background-color: rgb(255,255,255);
+        color: rgb(0,0,0);
+    }
+    #inst2 {
+        grid-area: in2;
+        background-color: rgb(255,255,255);
+        color: rgb(0,0,0);
+    }
+    #inst3 {
+        grid-area: in3;
+        background-color: rgb(255,255,255);
+        color: rgb(0,0,0);
+    }
+
+    #startBoat {
+        display: grid;
+        grid-area: ma;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 3fr 3fr 0fr;
+        grid-template-areas: 
+        '.'
+        'sc'
+        'fi'
+        '.';
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-bottom: 2.5%;
+        /* margin-top: 30%; */
+        text-align: center;
+    }
+
+    #scanmar {
+        grid-area: sc;
+        background-color: rgb(255,255,255);
+        color: rgb(255,255,255);
+        background-image: url("../img/scanmar.jpg");
+        background-size: cover;
+        border: rgba(255,255,255,0.7) solid;
+        background-position: bottom;
+    }
+
+    #finngulf {
+        grid-area: fi;
+        background-color: rgb(255,255,255);
+        color: rgb(255, 255, 255);
+        background-image: url("../img/finngulf.jpg");
+        background-size: cover;
+        border: rgba(255,255,255,0.7) solid;
+        background-position: bottom;
+    }
+
+    a:link {
+        color: rgb(255,255,255);
+        text-decoration: none;
+      }
+      
+      a:visited {
+        color: rgb(255,255,255);
+        text-decoration: none;
+      }
+      
+      a:hover {
+        color: rgb(255,255,255);
+        text-decoration: none;
+      }
+     
+      a:active {
+        color: rgb(0,0,0);
+        text-decoration: none;
+      }
+    
+      ul a:link {
+        color: rgb(0,0,0);
+        text-decoration: none;
+      }
+      
+      ul a:visited {
+        color: rgb(0,0,0);
+        text-decoration: none;
+      }
+      
+      ul a:hover {
+        color: rgb(172, 172, 172);
+        text-decoration: none;
+      }
+     
+      ul a:active {
+        color: rgb(0,0,0);
+        text-decoration: none;
+      }
+    
+}
