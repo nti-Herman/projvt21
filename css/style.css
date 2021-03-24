@@ -259,11 +259,11 @@
         background-position: center;
     }
 
-    #finngulf {
+    #crown {
         grid-area: fi;
         background-color: rgb(255,255,255);
         color: rgb(255, 255, 255);
-        background-image: url("../img/finngulf.jpg");
+        background-image: url("../img/crown.jpg");
         background-size: cover;
         background-position-y: bottom;
         border: rgba(255,255,255,0.7) solid;
@@ -395,7 +395,7 @@ a:link {
         max-width: 100vw;
         min-height: 150vh;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 10fr 1fr;
+        grid-template-rows: 32vh auto 20vh;
         grid-template-areas: 
         'hd'
         'ma'
@@ -478,13 +478,22 @@ a:link {
     #headline3 {
         font-size: 150%;
         color: rgb(255,255,255);
+        margin-bottom: 10%;
+        grid-area: h3;
+    }
+
+    #headline4 {
+        font-size: 150%;
+        color: rgb(255,255,255);
         margin-top: 5%;
+        grid-area: h4;
     }
 
     #headline5 {
         font-size: 150%;
         color: rgb(255,255,255);
         margin-top: 5%;
+        grid-area: h5;
     }
 
     #about {
@@ -540,42 +549,39 @@ a:link {
         grid-area: ma;
         height: 70vh;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 2fr 6fr;
+        grid-template-rows: 1fr 2fr;
         grid-template-areas: 
         'h2 h2'
         'tN oV';
         margin-left: 10%;
         margin-right: 10%;
-        margin-bottom: 2.5%;
         text-align: center;
     }
 
     #ourVision {
         grid-area: oV;
-        background-color: rgb(255,255,255);
+        background-color: rgba(255,255,255,0.9);
         color: rgb(0,0,0);
     }
 
     #theNeed {
         grid-area: tN;
-        background-color: rgb(255,255,255);
+        background-color: rgba(255,255,255,0.9);
         color: rgb(0,0,0);
     }
 
     #startInst {
         display: grid;
         grid-area: ma;
-        grid-template-columns: 1fr;
-        grid-template-rows: 2fr 2fr 2fr 2fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 2fr;
         grid-template-areas: 
-        '.'
-        'in1'
-        'in2'
-        'in3'
-        '.';
+        'h3 h3 h3'
+        'in1 in2 in3';
         margin-left: 10%;
         margin-right: 10%;
         margin-bottom: 2.5%;
+        margin-top: 15%;
         text-align: center;
     }
 
@@ -598,18 +604,18 @@ a:link {
     #startBoat {
         display: grid;
         grid-area: ma;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 3fr 3fr 0fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 3fr 5fr;
         grid-template-areas: 
-        '.'
-        'sc'
-        'fi'
-        '.';
+        'h5 h5'
+        'sc fi';
         margin-left: 10%;
         margin-right: 10%;
         margin-bottom: 2.5%;
+        margin-top: 10%;
         /* margin-top: 30%; */
         text-align: center;
+        height: 100vh;
     }
 
     #scanmar {
@@ -622,19 +628,71 @@ a:link {
         background-position: bottom;
     }
 
-    #finngulf {
+    #crown {
         grid-area: fi;
         background-color: rgb(255,255,255);
         color: rgb(255, 255, 255);
-        background-image: url("../img/finngulf.jpg");
+        background-image: url("../img/crown.jpg");
         background-size: cover;
         border: rgba(255,255,255,0.7) solid;
         background-position: bottom;
     }
 
+    #startCourse {
+        display: grid;
+        grid-area: ma;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 3fr 5fr 2fr;
+        grid-template-areas: 
+        'h4 h4'
+        'onb ofb'
+        'book book';
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-bottom: 2.5%;
+        margin-top: 10%;
+        text-align: center;
+    } 
+
+    #onboard {
+        grid-area: onb;
+        background-color: rgba(255,255,255,0.9);
+    }
+
+    #offboard {
+        grid-area: ofb;
+        background-color: rgba(255,255,255,0.9);
+    }
+
     a:link {
         color: rgb(255,255,255);
         text-decoration: none;
+      }
+
+      table {
+          border-collapse: collapse;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+          width: 98%;
+          margin: 1%;
+      }
+
+      tr, th {
+          border: 1px solid #dddd;
+          text-align: left;
+          padding: 8px;
+      }
+
+      #book {
+          background-color: rgba(255, 255, 255, 0.9);
+          grid-area: book;
+      }
+
+      .red {
+          background-color: rgb(255, 111, 111);
+      }
+
+      .green {
+          background-color: rgb(158, 255, 158);
       }
       
       a:visited {
