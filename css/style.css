@@ -36,7 +36,7 @@
         max-width: 100vw;
         min-height: 150vh;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 4fr 1fr;
+        grid-template-rows: 1fr 4fr 20vh;
         grid-template-areas: 
         'hd'
         'ma'
@@ -118,6 +118,13 @@
         font-size: 100%;
         color: rgb(255,255,255);
         margin-top: 5%;
+    }
+
+    #headline4 {
+        grid-area: h4;
+        font-size: 100%;
+        color: rgb(255,255,255);
+        margin-top: -5%;
     }
 
     #headline5 {
@@ -268,6 +275,59 @@
         background-position-y: bottom;
         border: rgba(255,255,255,0.7) solid;
         background-position: center;
+    }
+
+    #startCourse {
+        display: grid;
+        grid-area: ma;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 3.5fr 3fr 0.5fr;
+        grid-template-areas: 
+        'h4'
+        'onb'
+        'ofb'
+        'book';
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-bottom: 2.5%;
+        margin-top: 10%;
+        text-align: center;
+    } 
+
+    #onboard {
+        grid-area: onb;
+        background-color: rgba(255,255,255,0.9);
+    }
+
+    #offboard {
+        grid-area: ofb;
+        background-color: rgba(255,255,255,0.9);
+    }
+
+    table {
+        border-collapse: collapse;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        width: 98%;
+        margin: 1%;
+    }
+
+    tr, th {
+        border: 1px solid #dddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    #book {
+        background-color: rgba(255, 255, 255, 0.9);
+        grid-area: book;
+    }
+
+    .red {
+        background-color: rgb(255, 111, 111);
+    }
+
+    .green {
+        background-color: rgb(158, 255, 158);
     }
 
     .navLinks a {
@@ -433,7 +493,7 @@ a:link {
         width: 30%;
     }
 
-    ul.navLinks ul {
+    ul.navLinks li {
         float:left;
         padding-left: 35px;
         padding-right: 35px;
@@ -450,7 +510,7 @@ a:link {
         display: grid;
         grid-area: ma;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 3fr 3fr;
+        grid-template-rows: 1fr 1fr 1fr;
         grid-template-areas: 
         'h1 h1'
         'ab in'
@@ -502,7 +562,7 @@ a:link {
         background-size: cover;
         color: rgb(255,255,255);
         border: rgba(255,255,255,0.7) solid;
-        padding-top: 30%;
+        padding-top: 10%;
     }
 
     #instructors {
@@ -512,7 +572,7 @@ a:link {
         color: rgb(255,255,255);
         border: rgba(255,255,255,0.7) solid;
         background-position: center;
-        padding-top: 30%;
+        padding-top: 10%;
     }
 
     #booking {
@@ -521,7 +581,7 @@ a:link {
         background-size: cover;
         color: rgb(255,255,255);
         border: rgba(255,255,255,0.7) solid;
-        padding-top: 30%;
+        padding-top: 10%;
     }
 
     #boats {
@@ -531,7 +591,7 @@ a:link {
         color: rgb(255,255,255);
         border: rgba(255,255,255,0.7) solid;
         background-position: center;
-        padding-top: 30%;
+        padding-top: 10%;
     }
 
     footer {
@@ -555,6 +615,7 @@ a:link {
         'tN oV';
         margin-left: 10%;
         margin-right: 10%;
+        margin-bottom: 17%;
         text-align: center;
     }
 
@@ -562,12 +623,14 @@ a:link {
         grid-area: oV;
         background-color: rgba(255,255,255,0.9);
         color: rgb(0,0,0);
+        padding-top: 3%;
     }
 
     #theNeed {
         grid-area: tN;
         background-color: rgba(255,255,255,0.9);
         color: rgb(0,0,0);
+        padding-top: 3%;
     }
 
     #startInst {
@@ -589,16 +652,19 @@ a:link {
         grid-area: in1;
         background-color: rgb(255,255,255);
         color: rgb(0,0,0);
+        padding-top: 3%;
     }
     #inst2 {
         grid-area: in2;
         background-color: rgb(255,255,255);
         color: rgb(0,0,0);
+        padding-top: 3%;
     }
     #inst3 {
         grid-area: in3;
         background-color: rgb(255,255,255);
         color: rgb(0,0,0);
+        padding-top: 3%;
     }
 
     #startBoat {
@@ -620,22 +686,22 @@ a:link {
 
     #scanmar {
         grid-area: sc;
-        background-color: rgb(255,255,255);
         color: rgb(255,255,255);
         background-image: url("../img/scanmar.jpg");
         background-size: cover;
         border: rgba(255,255,255,0.7) solid;
         background-position: bottom;
+        padding-top: 3%;
     }
 
     #crown {
         grid-area: fi;
-        background-color: rgb(255,255,255);
         color: rgb(255, 255, 255);
         background-image: url("../img/crown.jpg");
         background-size: cover;
         border: rgba(255,255,255,0.7) solid;
         background-position: bottom;
+        padding-top: 3%;
     }
 
     #startCourse {
@@ -657,11 +723,13 @@ a:link {
     #onboard {
         grid-area: onb;
         background-color: rgba(255,255,255,0.9);
+        padding-top: 3%;
     }
 
     #offboard {
         grid-area: ofb;
         background-color: rgba(255,255,255,0.9);
+        padding-top: 3%;
     }
 
     a:link {
